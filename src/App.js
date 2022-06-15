@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import PageContainer from "./components/pageContainer/pageContainer.component";
+
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/header.component";
+import NavTab from "./components/navTabs/navtabs.component";
+import FormInput from "./components/formInput/formInput.component";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <hr class="demo-divider__hr-horizontal" />
+      <NavTab />
+      <hr class="demo-divider__hr-horizontal1" />
+      <FormInput />
+      <b>OR</b>
     </div>
   );
 }
