@@ -1,21 +1,26 @@
 import "./App.css";
 
-import PageContainer from "./components/pageContainer/pageContainer.component";
+import DailyAnalysisPage from "./pages/daily-analysis/daily-analysis.page";
+import PIP_Monitoring_V1 from "./pages/PIP-Monitoring-V1/PIP-Monitoring-V1.page";
+import PIP_Monitoring_V2 from "./pages/PIP-Monitoring-V2/PIP-Monitoring-V2.page";
+import DigitalAPIHealthCheck from "./pages/Digital-API-Health-check/Digital-API-Health-check.page";
+import ART_SPRView from "./pages/ART_SPR-view/ART_SPR-view.page";
 
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/header/header.component";
-import NavTab from "./components/navTabs/navtabs.component";
-import FormInput from "./components/formInput/formInput.component";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <hr class="demo-divider__hr-horizontal" />
-      <NavTab />
-      <hr class="demo-divider__hr-horizontal1" />
-      <FormInput />
-      <b>OR</b>
+      <Routes>
+        <Route path="/" element={<DailyAnalysisPage />} />
+        <Route path="/PIP_Monitoring_V1" element={<PIP_Monitoring_V1 />} />
+        <Route path="/PIP_Monitoring_V2" element={<PIP_Monitoring_V2 />} />
+        <Route
+          path="/DigitalAPIHealthCheck"
+          element={<DigitalAPIHealthCheck />}
+        />
+        <Route path="/ART_SPRView" element={<DailyAnalysisPage />} />
+      </Routes>
     </div>
   );
 }

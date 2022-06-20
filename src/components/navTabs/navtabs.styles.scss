@@ -1,18 +1,36 @@
 .nav-container {
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-}
+  width: 100%;
+  align-items: center;
+  padding: 20px 10px;
+  color: #0058a3;
+  display: inline-block;
 
-nav {
-    display: flex;
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    margin: 0 12px;
+    cursor: pointer;
+    transition: none;
+    position: relative;
 
-    ul {
-        display: flex;
-        list-style-type: none;
-
-        li {
-            margin: 0 12px;
-        }
+    &:hover {
+      border-bottom: 3px solid #0058a3;
+      border-radius: 2px;
+      padding-bottom: 19px;
+      text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
     }
+  }
 }
+
+// nav {
+//   display: flex;
+
+//   ul {
+//     display: flex;
+//     list-style-type: none;
+
+//     li {
+//       margin: 0 12px;
+//       cursor: pointer;
+//     }
+//   }
