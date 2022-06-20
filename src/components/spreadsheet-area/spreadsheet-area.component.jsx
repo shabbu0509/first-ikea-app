@@ -1,7 +1,5 @@
 import React from "react";
 
-import Dropzone from "react-dropzone";
-
 import "./spreadsheet-area.styles.scss";
 
 const SpreadSheetArea = () => {
