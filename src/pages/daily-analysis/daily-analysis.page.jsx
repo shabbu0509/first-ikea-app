@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 import "./daily-analysis.styles.scss";
 
 import Header from "../../components/header/header.component";
@@ -8,15 +10,21 @@ import FormInput from "../../components/formInput/formInput.component";
 import SpreadSheetArea from "../../components/spreadsheet-area/spreadsheet-area.component";
 
 const DailyAnalysisPage = () => {
+  const buttonToggle = useSelector((state) => state.user.toggleButton);
+  console.log(buttonToggle);
   return (
     <div>
       <Header />
       <hr class="demo-divider__hr-horizontal" />
       <NavTab />
       <hr class="demo-divider__hr-horizontal1" />
-      <FormInput />
-      <b>OR</b>
-      <SpreadSheetArea />
+      {!buttonToggle ? (
+        <div>
+          <FormInput />
+          <b>OR</b>
+          <SpreadSheetArea />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import userInputAction from "../../store/user-input/user-input.action";
 
 import "./formInput.styles.scss";
 
 function FormInput() {
+  const [toggleButton, setToggleButton] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toggleButton ? setToggleButton(false) : setToggleButton(true);
+  };
+
+  useEffect(() => {
+    dispatch(userInputAction(toggleButton));
+  }, [toggleButton]);
+
   return (
     <div className="form-container">
       <p>*Kindly fill either the single or multiple market information</p>
       <p className="p-tag">For single market, provide information</p>
-      <div className="input-area">
+      <form onSubmit={handleSubmit} className="input-area">
         <div class="form-field">
           <div class="text-area label-wrapper label-wrapper--text-input">
             <label for="example-id" class="" title="Enter item No.">
@@ -53,7 +67,7 @@ function FormInput() {
         <div className="btn-container">
           <button
             aria-disabled="false"
-            type="button"
+            type="submit"
             class="btn btn--small btn--primary"
           >
             <span class="btn__inner">
@@ -70,7 +84,7 @@ function FormInput() {
             </span>
           </button>
         </div>
-      </div>
+      </form>
 
       <hr class="demo-divider__hr-horizonta2" />
     </div>

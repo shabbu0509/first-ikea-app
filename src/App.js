@@ -1,5 +1,7 @@
 import "./App.css";
 
+import React, { useEffect } from "react";
+
 import DailyAnalysisPage from "./pages/daily-analysis/daily-analysis.page";
 import PIP_Monitoring_V1 from "./pages/PIP-Monitoring-V1/PIP-Monitoring-V1.page";
 import PIP_Monitoring_V2 from "./pages/PIP-Monitoring-V2/PIP-Monitoring-V2.page";
@@ -8,7 +10,28 @@ import ART_SPRView from "./pages/ART_SPR-view/ART_SPR-view.page";
 
 import { Routes, Route } from "react-router-dom";
 
+import axios, { Axios } from "axios";
+import { colourSwitchOffPressed } from "@ingka/variables";
+import { useState } from "react";
+
 function App() {
+  const [intialToken, setInitialToken] = useState({});
+  useEffect(() => {
+    axios
+      .post(`https://buyabletool-u5ngogn2ia-ew.a.run.app/User`, {
+        Username: "cripf",
+        Password: "api",
+        headers: new Headers({
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+          "Access-Control-Request-Method": "GET, POST, DELETE, PUT, OPTIONS",
+        }),
+      })
+      .then((getData) => {
+        console.log(getData.data);
+      });
+  }, []);
   return (
     <div className="App">
       <Routes>
@@ -19,7 +42,7 @@ function App() {
           path="/DigitalAPIHealthCheck"
           element={<DigitalAPIHealthCheck />}
         />
-        <Route path="/ART_SPRView" element={<DailyAnalysisPage />} />
+        <Route path="/ART_SPRView" element={<ART_SPRView />} />
       </Routes>
     </div>
   );
