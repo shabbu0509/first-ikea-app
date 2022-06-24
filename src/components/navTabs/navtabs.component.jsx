@@ -7,40 +7,21 @@ import "@ingka/focus/style.scss";
 
 import { NavLink } from "react-router-dom";
 
-const NAV_ACTIVE = {
-  nav_1: false,
-  nav_2: false,
-  nav_3: false,
-  nav_4: false,
-  nav_5: false,
-};
-
 function NavTab() {
-  const [isLinkActive, setLinkActive] = useState(NAV_ACTIVE);
-
-  const handleClick = (e) => {
-    const id = e.target.name;
-    setLinkActive((linkActive) => ({
-      [id]: !linkActive[id],
-    }));
-  };
   return (
     <div className="nav-container">
       <NavLink
         name="nav_1"
-        //className={`${isLinkActive ? "active-link" : "nav-link"}`}
-        className="nav-link"
-        onClick={handleClick}
-        activeClassName="active-link"
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
         to="/"
       >
         Daily Analysis
       </NavLink>
       <NavLink
         name="nav_2"
-        className="nav-link"
-        //className={`${isLinkActive ? "active-link" : "nav-link"}`}
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
         to="/ART_SPRView"
+        ac
       >
         ART SPR view
       </NavLink>

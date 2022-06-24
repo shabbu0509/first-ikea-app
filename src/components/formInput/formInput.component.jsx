@@ -6,6 +6,7 @@ import "./formInput.styles.scss";
 
 function FormInput() {
   const [toggleButton, setToggleButton] = useState(false);
+  //const [textAreaValue, setTextAreaValue] = useState();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -34,8 +35,8 @@ function FormInput() {
                 aria-describedby="helper-msg-id"
                 aria-required="false"
                 type="text"
+                placeholder="Example &#10; 00455378 &#10; 00478718 &#10;"
               ></textarea>
-              <span class="text-area__border"></span>
             </div>
           </div>
           <div class="form-field__content">
@@ -45,7 +46,7 @@ function FormInput() {
               class="form-field__message-wrapper"
               type=""
             >
-              <span class="form-field__message">(Max of 100 items)</span>
+              <span class="form-field__message">(Max of 1000 items)</span>
             </span>
           </div>
         </div>
@@ -60,6 +61,7 @@ function FormInput() {
                 type="text"
                 id="example-id"
                 aria-required="false"
+                placeholder="Example:SE"
               />
             </div>
           </div>

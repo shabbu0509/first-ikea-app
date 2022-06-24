@@ -1,24 +1,28 @@
 .nav-container {
-  width: 100%;
-  align-items: center;
   padding: 20px 10px;
-  color: #0058a3;
-  display: inline-block;
 
   .nav-link {
     text-decoration: none;
     color: black;
     margin: 0 12px;
     cursor: pointer;
-    transition: none;
-    position: relative;
 
-    &:hover {
-      border-bottom: 3px solid #0058a3;
-      border-radius: 2px;
-      padding-bottom: 19px;
-      text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
-    }
+    // &:hover {
+    //   border-bottom: 3px solid #0058a3;
+    //   border-radius: 2px;
+    //   padding-bottom: 19px;
+    //   text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
+    // }
+  }
+  .active-link {
+    text-decoration: none;
+    color: black;
+    margin: 0 12px;
+    cursor: pointer;
+    border-bottom: 3px solid #0058a3;
+    border-radius: 2px;
+    padding-bottom: 19px;
+    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
   }
 }
 
