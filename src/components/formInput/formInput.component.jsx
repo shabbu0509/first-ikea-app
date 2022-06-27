@@ -55,7 +55,7 @@ function FormInput() {
             <label for="example-id"  title="Enter market">
               Enter market
             </label>
-            <div class="input-field__wrapper">
+            <div className="input-field__wrapper">
               <input
                 className="input-text"
                 type="text"
