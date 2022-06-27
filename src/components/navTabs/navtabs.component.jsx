@@ -25,16 +25,32 @@ function NavTab() {
       >
         ART SPR view
       </NavLink>
-      <NavLink name="nav_3" className="nav-link" to="/PIP_Monitoring_V1">
+      <NavLink
+        name="nav_3"
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
+        to="/PIP_Monitoring_V1"
+      >
         PIP Monitoring - V1
       </NavLink>
-      <NavLink name="nav_4" className="nav-link" to="/PIP_Monitoring_V2">
+      <NavLink
+        name="nav_4"
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
+        to="/PIP_Monitoring_V2"
+      >
         PIP Monitoring - V2
       </NavLink>
-      <NavLink name="nav_4" className="nav-link" to="/PIP_Monitoring_V2">
+      <NavLink
+        name="nav_4"
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
+        to="/price_change"
+      >
         Price change
       </NavLink>
-      <NavLink name="nav_5" className="nav-link" to="/DigitalAPIHealthCheck">
+      <NavLink
+        name="nav_5"
+        className={(navData) => (navData.isActive ? "active-link" : "nav-link")}
+        to="/DigitalAPIHealthCheck"
+      >
         Digital API health check
       </NavLink>
       {/* 
