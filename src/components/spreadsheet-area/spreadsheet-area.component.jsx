@@ -16,8 +16,8 @@ const SpreadSheetArea = () => {
           type="button"
           class="btn btn--small btn--secondary"
         >
-          <span class="btn__inner">
-            <span class="btn__label">Download template</span>
+          <span className="btn__inner">
+            <span className="btn__label">Download template</span>
           </span>
         </button>
       </div>

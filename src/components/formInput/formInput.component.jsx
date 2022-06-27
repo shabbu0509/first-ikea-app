@@ -23,12 +23,12 @@ function FormInput() {
       <p>*Kindly fill either the single or multiple market information</p>
       <p className="p-tag">For single market, provide information</p>
       <form onSubmit={handleSubmit} className="input-area">
-        <div class="form-field">
-          <div class="text-area label-wrapper label-wrapper--text-input">
-            <label for="example-id" class="" title="Enter item No.">
+        <div className="form-field">
+          <div className="text-area label-wrapper label-wrapper--text-input">
+            <label for="example-id" title="Enter item No.">
               Enter item No.
             </label>
-            <div class="text-area__wrapper">
+            <div className="text-area__wrapper">
               <textarea
                 className="text"
                 id="example-id"
@@ -39,20 +39,20 @@ function FormInput() {
               ></textarea>
             </div>
           </div>
-          <div class="form-field__content">
+          <div className="form-field__content">
             <span
               id="helper-msg-id"
               aria-hidden="false"
-              class="form-field__message-wrapper"
+              className="form-field__message-wrapper"
               type=""
             >
-              <span class="form-field__message">(Max of 1000 items)</span>
+              <span className="form-field__message">(Max of 1000 items)</span>
             </span>
           </div>
         </div>
-        <div class="text-field">
-          <div class="input-field input-field--prefixed input-field--suffixed label-wrapper label-wrapper--text-input">
-            <label for="example-id" class="" title="Enter market">
+        <div className="text-field">
+          <div className="input-field input-field--prefixed input-field--suffixed label-wrapper label-wrapper--text-input">
+            <label for="example-id"  title="Enter market">
               Enter market
             </label>
             <div class="input-field__wrapper">
@@ -70,25 +70,25 @@ function FormInput() {
           <button
             aria-disabled="false"
             type="submit"
-            class="btn btn--small btn--primary"
+            className="btn btn--small btn--primary"
           >
-            <span class="btn__inner">
-              <span class="btn__label">Submit</span>
+            <span className="btn__inner">
+              <span className="btn__label">Submit</span>
             </span>
           </button>
           <button
             aria-disabled="false"
             type="button"
-            class="btn btn--small btn--secondary"
+            className="btn btn--small btn--secondary"
           >
-            <span class="btn__inner">
-              <span class="btn__label">Clear</span>
+            <span className="btn__inner">
+              <span className="btn__label">Clear</span>
             </span>
           </button>
         </div>
       </form>
 
-      <hr class="demo-divider__hr-horizonta2" />
+      <hr className="demo-divider__hr-horizonta2" />
     </div>
   );
 }
