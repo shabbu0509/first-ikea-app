@@ -14,10 +14,10 @@ const SpreadSheetArea = () => {
         <button
           aria-disabled="false"
           type="button"
-          class="btn btn--small btn--secondary"
+          className="btn btn--small btn--secondary"
         >
-          <span class="btn__inner">
-            <span class="btn__label">Download template</span>
+          <span className="btn__inner">
+            <span className="btn__label">Download template</span>
           </span>
         </button>
       </div>

@@ -7,9 +7,9 @@ const PIP_Monitoring_V1 = () => {
   return (
     <div>
       <Header />
-      <hr class="demo-divider__hr-horizontal" />
+      <hr className="demo-divider__hr-horizontal" />
       <NavTab />
-      <hr class="demo-divider__hr-horizontal1" />
+      <hr className="demo-divider__hr-horizontal1" />
     </div>
   );
 };
