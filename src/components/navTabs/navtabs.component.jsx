@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./navtabs.styles.scss";
 
 import "@ingka/svg-icon/style.scss";

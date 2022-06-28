@@ -4,10 +4,21 @@ import userInputAction from "../../store/user-input/user-input.action";
 
 import "./formInput.styles.scss";
 
+const FORM_FEILDS = {
+  textarea: null,
+  market: "",
+};
+
 function FormInput() {
   const [toggleButton, setToggleButton] = useState(false);
-  //const [textAreaValue, setTextAreaValue] = useState();
+  const [formInput, setFormInput] = useState(FORM_FEILDS);
+  const { textarea, market } = formInput;
   const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormInput({ ...formInput, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +47,9 @@ function FormInput() {
                 aria-required="false"
                 type="text"
                 placeholder="Example &#10; 00455378 &#10; 00478718 &#10;"
+                name="textarea"
+                onChange={handleChange}
+                value={textarea}
               ></textarea>
             </div>
           </div>
@@ -62,6 +76,9 @@ function FormInput() {
                 id="example-id"
                 aria-required="false"
                 placeholder="Example:SE"
+                name="market"
+                onChange={handleChange}
+                value={market}
               />
             </div>
           </div>

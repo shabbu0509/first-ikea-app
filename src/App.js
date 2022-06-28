@@ -10,31 +10,38 @@ import DigitalAPIHealthCheck from "./pages/Digital-API-Health-check/Digital-API-
 import ART_SPRView from "./pages/ART_SPR-view/ART_SPR-view.page";
 import PriceChange from "./pages/price-change/price-change.component";
 
+import initialToken from "./store/initial-token/initial-token.action";
+
 import { Routes, Route } from "react-router-dom";
 
-import axios, { Axios } from "axios";
-import { colourSwitchOffPressed } from "@ingka/variables";
-import { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [intialToken, setInitialToken] = useState({});
+  //const [intialToken, setInitialToken] = useState({});
   const dispatch = useDispatch();
+
+  var bodyFormData = new FormData();
+  bodyFormData.append("user", "cripf");
+  bodyFormData.append("password", "api");
+
   useEffect(() => {
-    axios
-      .post(`https://buyabletool-u5ngogn2ia-ew.a.run.app/User`, {
-        Username: "cripf",
-        Password: "api",
-        headers: new Headers({
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-          "Access-Control-Request-Method": "GET, POST, DELETE, PUT, OPTIONS",
-        }),
-      })
-      .then((getData) => {
-        console.log(getData.data);
-        dispatch(setInitialToken(getData.data));
-      });
+    dispatch(initialToken());
+    // axios({
+    //   method: "post",
+    //   url: "https://buyabletool-u5ngogn2ia-ew.a.run.app/User",
+    //   data: bodyFormData,
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    // })
+    //   .then((getData) => {
+    //     const initialToken = getData.data;
+    //     console.log(initialToken);
+    //     //dispatch(setInitialToken(initialToken));
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.message);
+    //   });
   }, []);
   return (
     <div className="App">
