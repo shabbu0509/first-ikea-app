@@ -36,12 +36,13 @@ export default class Middleware {
       };
     };
 
-    static getItemsMarketData = () => {
-      console.log("inside getmarkte")
+    static getItemsMarketData = (items,market) => {
+     
+      //30351317,70530256
       return (dispatch) => {
         axios({
           method: "get",
-          url: "https://buyabletool-u5ngogn2ia-ew.a.run.app/markets/SE/items?ids=30351317,70530256",
+          url: "https://buyabletool-u5ngogn2ia-ew.a.run.app/markets/"+market+"/items?ids="+items,
           headers: {
             "Authorization": getAccessToken,
           },

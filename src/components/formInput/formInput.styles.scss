@@ -20,9 +20,10 @@
 
   .form-field {
     .text-area__wrapper {
-      .text {
+      .textArea {
         width: 330px;
         height: 80px;
+        font-size:20px;
       }
     }
   }
@@ -34,6 +35,7 @@
       .input-text {
         width: 300px;
         height: 35px;
+        font-size:18px;
       }
     }
   }

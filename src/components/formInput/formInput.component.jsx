@@ -17,18 +17,29 @@ function FormInput() {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+  
+    const { name, value } = e.target; 
     setFormInput({ ...formInput, [name]: value });
+   
   };
+let items;
+  const onKeyPress = (e)=>{
+    console.log(e.key);
+    if (e.key === 'Enter') {
+      items = textarea.replace(new RegExp("[\r\n]", "gm"), ",");
+    }
+   
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     toggleButton ? setToggleButton(false) : setToggleButton(true);
   };
 
-  const submitClick = ()=>{
-    console.log("onsubmit");
-    dispatch(Middleware.getItemsMarketData());
+  const submitClick = (result,market)=>{
+    console.log("onsubmit  "+market+"     ------"+result);
+
+    dispatch(Middleware.getItemsMarketData(result,market));
   }
 
   useEffect(() => {
@@ -47,15 +58,19 @@ function FormInput() {
             </label>
             <div className="text-area__wrapper">
               <textarea
-                className="text"
+                className="textArea"
                 id="example-id"
                 aria-describedby="helper-msg-id"
                 aria-required="false"
                 type="text"
-                placeholder="Example &#10; 00455378 &#10; 00478718 &#10;"
+                pattern="[0-9]*"
+                placeholder="Example
+                00455378
+                00478718 "
                 name="textarea"
                 onChange={handleChange}
                 value={textarea}
+                onKeyPress = {onKeyPress}
               ></textarea>
             </div>
           </div>
@@ -96,7 +111,7 @@ function FormInput() {
             className="btn btn--small btn--primary"
           >
             <span className="btn__inner">
-              <span className="btn__label" onClick={submitClick}>Submit</span>
+              <span className="btn__label" onClick={submitClick(textarea,market)}>Submit</span>
             </span>
           </button>
           <button
